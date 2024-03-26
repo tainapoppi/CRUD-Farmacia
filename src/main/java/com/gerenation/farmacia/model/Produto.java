@@ -66,5 +66,9 @@ public class Produto {
 		public void setQtde(Long qtde) {
 			this.qtde = qtde;
 		}
+
+		public Produto getCategoria() {
+			return null;
+		}
 		
 }
