@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.gerenation.farmacia.model.Produto;
-import com.gerenation.farmacia.repository.CategoriaRepository;
 import com.gerenation.farmacia.repository.ProdutoRepository;
 
 import jakarta.validation.Valid;
@@ -32,8 +31,7 @@ public class ProdutoController {
 	@Autowired
 	private ProdutoRepository produtoRepository;
 
-	@Autowired
-	private CategoriaRepository categoriaRepository;
+
 
 	@GetMapping
 	public ResponseEntity<List<Produto>> getAll() {
