@@ -3,10 +3,13 @@ package com.gerenation.farmacia.model;
 import java.math.BigDecimal;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
@@ -33,6 +36,8 @@ public class Produto {
 		//@NotBlank(message = "O atributo quantidade é Obrigatório!")
 		private Long qtde;
 		
+		@ManyToOne
+		@JsonIgnoreProperties("produto")
 		private Categoria categoria;
 
 		public Long getId() {
@@ -68,12 +73,13 @@ public class Produto {
 		}
 
 		public Categoria getCategoria() {
-	        return categoria;
-	    }
+			return categoria;
+		}
 
-	     public void setCategoria(Categoria categoria) {
-	         this.categoria = categoria;
+		public void setCategoria(Categoria categoria) {
+			this.categoria = categoria;
+		}
 		
-	    }
+		
 		
 }
